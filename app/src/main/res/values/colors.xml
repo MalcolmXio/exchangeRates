@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Base colors-->
+    <color name="colorPrimary">#3c3c3c</color>
+    <color name="colorAccent">#2196F3</color>
+    <color name="colorSecondary">#000</color>
+    <color name="colorTextPrimary">#FFFFFF</color>
+    <color name="colorTextSecondary">#7f1a18</color>
+
+    <color name="whiteColor">@android:color/white</color>
+
+    <!--Activity theme-->
+    <color name="colorGrayBackground">#D5D5D5</color>
+
+    <color name="colorCardBackground">#B5FBDD</color>
+
+</resources>

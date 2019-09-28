@@ -1,0 +1,25 @@
+<resources>
+    <string name="weather_screen_title">Weather</string>
+
+    <!-- Animations -->
+    <string name="weather_transition_poster">weatherPosterTransition</string>
+
+    <string name="temperature_value">%.0f\u2103</string>
+
+    <!--WeatherDataFragment-->
+    <string name="country_title">Country:</string>
+    <string name="coord_title">Coordinates:</string>
+    <string name="coord_desc">latitude = %.2f,%nlongitude = %.2f</string>
+    <string name="weather_title">Weather:</string>
+    <string name="temp_title">Temperature:</string>
+    <string name="tempDesc">temperature: %.2f \u2103,%nminimum temperature: %.2f \u2103,%nmaximum temperature: %.2f \u2103</string>
+    <string name="hum_title">Humidity:</string>
+    <string name="hum_desc">%d %%</string>
+    <string name="pressure_title">Pressure:</string>
+    <string name="pressure_desc">%d hPa</string>
+    <string name="wind_title">Wind:</string>
+    <string name="wind_desc">speed: %.1f meter/sec,%ndirection: %.2f degrees</string>
+    <string name="sunrise_title">Sunrise:</string>
+    <string name="sunset_title">Sunset:</string>
+
+</resources>

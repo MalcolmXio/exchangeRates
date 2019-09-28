@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayBackground">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+        <com.google.android.material.appbar.CollapsingToolbarLayout
+            android:id="@+id/collapsing_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleMarginStart="@dimen/activity_horizontal_margin"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
+
+            <ImageView
+                android:id="@+id/weatherIcon"
+                style="@style/WeatherPoster"
+                android:layout_height="240dp"
+                android:layout_centerHorizontal="true"
+                android:fitsSystemWindows="true"
+                app:layout_collapseMode="parallax" />
+
+        </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:id="@+id/detailsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:id="@+id/countryLayout"
+                style="@style/LinearLayout">
+
+                <TextView
+                    style="@style/TextViewBaseStyle"
+                    android:text="@string/country_title" />
+
+                <TextView
+                    android:id="@+id/countryDesc"
+                    style="@style/TextViewSubStyle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/coordLayout"
+                style="@style/LinearLayout">
+
+                <TextView
+                    style="@style/TextViewBaseStyle"
+                    android:text="@string/coord_title" />
+
+                <TextView
+                    android:id="@+id/coordDesc"
+                    style="@style/TextViewSubStyle" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/weatherLayout"
+                style="@style/LinearLayout">
+
+                <TextView
+                    style="@style/TextViewBaseStyle"
+                    android:text="@string/weather_title" />
+
+                <TextView
+                    android:id="@+id/weatherDesc"
+                    style="@style/TextViewSubStyle" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/tempLayout"
+                style="@style/LinearLayout">
+
+                <TextView
+                    style="@style/TextViewBaseStyle"
+                    android:text="@string/temp_title" />
+
+                <TextView
+                    android:id="@+id/tempDesc"
+                    style="@style/TextViewSubStyle" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/humLayout"
+                style="@style/LinearLayout">
+
+                <TextView
+                    style="@style/TextViewBaseStyle"
+                    android:text="@string/hum_title" />
+
+                <TextView
+                    android:id="@+id/humidityDesc"
+                    style="@style/TextViewSubStyle" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/pressureLayout"
+                style="@style/LinearLayout">
+
+                <TextView
+                    style="@style/TextViewBaseStyle"
+                    android:text="@string/pressure_title" />
+
+                <TextView
+                    android:id="@+id/pressureDesc"
+                    style="@style/TextViewSubStyle" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/windLayout"
+                style="@style/LinearLayout">
+
+                <TextView
+                    style="@style/TextViewBaseStyle"
+                    android:text="@string/wind_title" />
+
+                <TextView
+                    android:id="@+id/windDesc"
+                    style="@style/TextViewSubStyle" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
