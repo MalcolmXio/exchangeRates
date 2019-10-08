@@ -10,6 +10,11 @@ class RatesViewModel
 @Inject constructor(private val getRates: GetRates) : BaseViewModel() {
 
     var rate: MutableLiveData<List<RateView>> = MutableLiveData()
+    var amount: MutableLiveData<Float> = MutableLiveData()
+
+    fun updateAmount(value: Float) {
+        this.amount.value = value
+    }
 
     fun loadRates() =
         getRates(UseCase.None()) { it.either(::handleFailure, ::handleRatesData) }

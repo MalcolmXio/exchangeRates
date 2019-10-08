@@ -12,6 +12,6 @@
     <!--Activity theme-->
     <color name="colorGrayBackground">#D5D5D5</color>
 
-    <color name="colorCardBackground">#B5FBDD</color>
+    <color name="colorCardBackground">#f1f1f1</color>
 
 </resources>

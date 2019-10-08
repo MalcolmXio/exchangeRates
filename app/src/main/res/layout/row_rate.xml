@@ -35,6 +35,8 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/countryIcon"
+            app:layout_constraintRight_toLeftOf="@+id/tvValue"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
@@ -51,7 +53,7 @@
                 android:id="@+id/tvCurrencyName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
+                android:layout_marginStart="16dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
                 tools:text="US Dollar" />

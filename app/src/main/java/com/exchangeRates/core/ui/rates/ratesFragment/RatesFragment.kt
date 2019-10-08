@@ -1,9 +1,12 @@
 package com.exchangeRates.core.ui.rates.ratesFragment
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.transition.TransitionInflater
 import android.view.View
 import androidx.annotation.StringRes
+import androidx.appcompat.widget.AppCompatEditText
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.exchangeRates.R
 import com.exchangeRates.core.exception.Failure
@@ -15,6 +18,7 @@ import com.exchangeRates.core.ui.rates.RatesViewModel
 import com.exchangeRates.core.ui.rates.ratesFragment.adapter.RateView
 import com.exchangeRates.core.ui.rates.ratesFragment.adapter.RatesAdapter
 import kotlinx.android.synthetic.main.fragment_rates.*
+import kotlinx.android.synthetic.main.fragment_rates.view.*
 import javax.inject.Inject
 
 class RatesFragment : BaseFragment() {
@@ -36,7 +40,8 @@ class RatesFragment : BaseFragment() {
         appComponent.inject(this)
 
         ratesViewModel = viewModel(viewModelFactory) {
-            observe(rate, ::renderWeather)
+            observe(rate, ::renderRates)
+            observe(amount, ::updateRates)
             failure(failure, ::handleFailure)
         }
 
@@ -47,6 +52,7 @@ class RatesFragment : BaseFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        addListener(view.amount)
         updateUI(::initializeView, ::loadWeatherData)
     }
 
@@ -69,10 +75,14 @@ class RatesFragment : BaseFragment() {
         ratesViewModel.loadRates()
     }
 
-    private fun renderWeather(rate: List<RateView>?) {
+    private fun renderRates(rate: List<RateView>?) {
         currentDataTimestamp = System.currentTimeMillis()
         ratesAdapter.collection = rate.orEmpty()
         hideProgress()
+    }
+
+    private fun updateRates(amount: Float?) {
+        ratesAdapter.amount = amount ?: 1F
     }
 
     private fun handleFailure(failure: Failure?) {
@@ -92,6 +102,19 @@ class RatesFragment : BaseFragment() {
 
     private fun checkDataTimestamp(): Boolean =
         currentDataTimestamp < (System.currentTimeMillis() - ARG_TEN_MINUTES)
+
+    private fun addListener(editText: AppCompatEditText) {
+        editText.addTextChangedListener(object : TextWatcher {
+            override fun afterTextChanged(s: Editable?) {}
+
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                ratesViewModel.updateAmount(s.toString().toFloat())
+            }
+
+        })
+    }
 
     companion object {
         private const val ARG_TEN_MINUTES = 600000L
