@@ -12,7 +12,7 @@ buildscript {
     ext.target_sdk = 28
     ext.min_sdk = 21
 
-    ext.application_id = 'com.weatherapp'
+    ext.application_id = 'com.exchangeRates'
     ext.version_name = '1.0'
     ext.version_code = 1
     ext.test_runner = 'androidx.test.runner.AndroidJUnitRunner'

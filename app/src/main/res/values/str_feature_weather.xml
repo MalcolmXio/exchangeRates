@@ -1,12 +1,7 @@
 <resources>
-    <string name="weather_screen_title">Weather</string>
+    <string name="rates_screen_title">Exchange rates</string>
 
-    <!-- Animations -->
-    <string name="weather_transition_poster">weatherPosterTransition</string>
-
-    <string name="temperature_value">%.0f\u2103</string>
-
-    <!--WeatherDataFragment-->
+    <!--RatesFragment-->
     <string name="country_title">Country:</string>
     <string name="coord_title">Coordinates:</string>
     <string name="coord_desc">latitude = %.2f,%nlongitude = %.2f</string>
