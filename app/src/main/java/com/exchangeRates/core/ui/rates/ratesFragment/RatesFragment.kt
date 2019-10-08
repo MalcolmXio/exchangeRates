@@ -110,7 +110,11 @@ class RatesFragment : BaseFragment() {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {}
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                ratesViewModel.updateAmount(s.toString().toFloat())
+                if (s.isNullOrEmpty()) {
+                    ratesViewModel.updateAmount(1F)
+                } else {
+                    ratesViewModel.updateAmount(s.toString().toFloat())
+                }
             }
 
         })

@@ -14,7 +14,7 @@ import kotlin.properties.Delegates
 class RatesAdapter
 @Inject constructor() : RecyclerView.Adapter<RatesAdapter.ViewHolder>() {
 
-    internal var amount: Float by Delegates.observable(1f) {_, _, _ ->
+    internal var amount: Float by Delegates.observable(1f) { _, _, _ ->
         notifyDataSetChanged()
     }
 
@@ -36,7 +36,10 @@ class RatesAdapter
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(rateView: RateView, amount: Float) {
-            itemView.tvValue.text = (amount / rateView.value).toString()
+            itemView.tvValue.text = String.format(
+                itemView.context.getString(R.string.amount_value),
+                amount * rateView.nominal / rateView.value
+            )
             itemView.tvCurrency.text = rateView.charCode
             itemView.tvCurrencyName.text = rateView.name
             itemView.countryIcon.loadFromUrl(String.getCountryIconUrl(rateView))

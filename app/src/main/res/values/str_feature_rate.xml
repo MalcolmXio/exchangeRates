@@ -1,0 +1,7 @@
+<resources>
+    <string name="rates_screen_title">Exchange rates</string>
+
+    <!--RatesFragment-->
+    <string name="amount_value">%.4f</string>
+
+</resources>

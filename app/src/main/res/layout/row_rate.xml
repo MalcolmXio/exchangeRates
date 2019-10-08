@@ -14,11 +14,12 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="6dp">
 
         <ImageView
             android:id="@+id/countryIcon"
-            style="@style/WeatherPoster"
+            style="@style/Rate"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_marginStart="16dp"
@@ -30,20 +31,21 @@
 
         <LinearLayout
             android:id="@+id/countryInfoLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintLeft_toRightOf="@id/countryIcon"
             app:layout_constraintRight_toLeftOf="@+id/tvValue"
-            app:layout_constraintHorizontal_bias="0"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tvCurrency"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
+                android:gravity="start"
                 android:textColor="@color/colorSecondary"
                 android:textSize="14sp"
                 android:textStyle="bold"
@@ -51,9 +53,10 @@
 
             <TextView
                 android:id="@+id/tvCurrencyName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginStart="16dp"
+                android:gravity="start"
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
                 tools:text="US Dollar" />
@@ -62,16 +65,19 @@
 
         <TextView
             android:id="@+id/tvValue"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:gravity="end"
+            android:singleLine="true"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="67.23" />
+            app:layout_constraintWidth_max="128dp"
+            tools:text="67.231231231231231231231231231231231231231" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
